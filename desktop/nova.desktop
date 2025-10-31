@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Nova AI Dashboard
+Comment=Intelligent AI assistant powered by local LLMs
+# Use the project's venv python so the launcher uses the same environment
+Exec=/home/scott/Nova/.venv/bin/python /home/scott/Nova/main.py
+Path=/home/scott/Nova
+Icon=/home/scott/Nova/assets/icon.png
+Terminal=false
+Categories=Development;Utility;Artificial Intelligence;
+Keywords=AI;Chat;Assistant;Nova;LLM;
+StartupNotify=true

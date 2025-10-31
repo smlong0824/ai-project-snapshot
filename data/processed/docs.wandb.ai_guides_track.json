@@ -1,0 +1,15 @@
+{
+  "doc_id": "docs.wandb.ai_guides_track",
+  "chunks": [
+    {
+      "content": "# Start a run. # # When this block exits, it waits for logged data to finish uploading. # If an exception is raised, the run is marked failed. with wandb.init(entity=\"\", project=\"my-project-name\") as run: # Save mode inputs and hyperparameters. run.config.learning_rate = 0.01 # Run your experiment code. for epoch in range(num_epochs): # Do some training... # Log metrics over time to visualize model performance. run.log({\"loss\": loss}) # Upload model outputs as artifacts. run.log_artifact(model)",
+      "metadata": {
+        "source": "https://docs.wandb.ai/guides/track",
+        "doc_id": "docs.wandb.ai_guides_track",
+        "category": "mlops",
+        "chunk_id": "docs.wandb.ai_guides_track_chunk_0",
+        "chunk_index": 0
+      }
+    }
+  ]
+}

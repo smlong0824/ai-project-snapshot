@@ -1,0 +1,85 @@
+{
+  "doc_id": "redis.io_topics_data_types",
+  "chunks": [
+    {
+      "content": "Redis data types Overview of data types supported by Redis Redis is a data structure server. At its core, Redis provides a collection of native data types that help you solve a wide variety of problems, from caching to queuing to event processing. Below is a short description of each data type, with links to broader overviews and command references. Each overview includes a comprehensive tutorial with code samples. Data types Redis Open Source implements the following data types: Strings Redis strings are the most basic Redis data type, representing a sequence of bytes. For more information, see: Lists Redis lists are",
+      "metadata": {
+        "source": "https://redis.io/topics/data-types",
+        "doc_id": "redis.io_topics_data_types",
+        "category": "databases",
+        "chunk_id": "redis.io_topics_data_types_chunk_0",
+        "chunk_index": 0
+      }
+    },
+    {
+      "content": "of bytes. For more information, see: Lists Redis lists are lists of strings sorted by insertion order. For more information, see: Sets Redis sets are unordered collections of unique strings that act like the sets from your favorite programming language (for example, Java HashSets, Python sets, and so on). With a Redis set, you can add, remove, and test for existence in O(1) time (in other words, regardless of the number of set elements). For more information, see: Hashes Redis hashes are record types modeled as collections of field-value pairs. As such, Redis hashes resemble Python dictionaries, Java HashMaps, and Ruby hashes.",
+      "metadata": {
+        "source": "https://redis.io/topics/data-types",
+        "doc_id": "redis.io_topics_data_types",
+        "category": "databases",
+        "chunk_id": "redis.io_topics_data_types_chunk_1",
+        "chunk_index": 1
+      }
+    },
+    {
+      "content": "Redis hashes resemble Python dictionaries, Java HashMaps, and Ruby hashes. For more information, see: Sorted sets Redis sorted sets are collections of unique strings that maintain order by each string's associated score. For more information, see: Vector sets Redis vector sets are a specialized data type designed for managing high-dimensional vector data, enabling fast and efficient vector similarity search within Redis. Vector sets are optimized for use cases involving machine learning, recommendation systems, and semantic search, where each vector represents a data point in multi-dimensional space. Vector sets supports the HNSW (hierarchical navigable small world) algorithm, allowing you to store, index, and",
+      "metadata": {
+        "source": "https://redis.io/topics/data-types",
+        "doc_id": "redis.io_topics_data_types",
+        "category": "databases",
+        "chunk_id": "redis.io_topics_data_types_chunk_2",
+        "chunk_index": 2
+      }
+    },
+    {
+      "content": "navigable small world) algorithm, allowing you to store, index, and query vectors based on the cosine similarity metric. With vector sets, Redis provides native support for hybrid search, combining vector similarity with structured filters. For more information, see: Streams A Redis stream is a data structure that acts like an append-only log. Streams help record events in the order they occur and then syndicate them for processing. For more information, see: Geospatial indexes Redis geospatial indexes are useful for finding locations within a given geographic radius or bounding box. For more information, see: Bitmaps Redis bitmaps let you perform bitwise operations on",
+      "metadata": {
+        "source": "https://redis.io/topics/data-types",
+        "doc_id": "redis.io_topics_data_types",
+        "category": "databases",
+        "chunk_id": "redis.io_topics_data_types_chunk_3",
+        "chunk_index": 3
+      }
+    },
+    {
+      "content": "see: Bitmaps Redis bitmaps let you perform bitwise operations on strings. For more information, see: Bitfields Redis bitfields efficiently encode multiple counters in a string value. Bitfields provide atomic get, set, and increment operations and support different overflow policies. For more information, see: JSON Redis JSON provides structured, hierarchical arrays and key-value objects that match the popular JSON text file format. You can import JSON text into Redis objects and access, modify, and query individual data elements. For more information, see: Probabilistic data types These data types let you gather and calculate statistics in a way that is approximate but highly efficient.",
+      "metadata": {
+        "source": "https://redis.io/topics/data-types",
+        "doc_id": "redis.io_topics_data_types",
+        "category": "databases",
+        "chunk_id": "redis.io_topics_data_types_chunk_4",
+        "chunk_index": 4
+      }
+    },
+    {
+      "content": "statistics in a way that is approximate but highly efficient. The following types are available: HyperLogLog The Redis HyperLogLog data structures provide probabilistic estimates of the cardinality (i.e., number of elements) of large sets. For more information, see: Bloom filter Redis Bloom filters let you check for the presence or absence of an element in a set. For more information, see: Cuckoo filter Redis Cuckoo filters let you check for the presence or absence of an element in a set. They are similar to Bloom filters but with slightly different trade-offs between features and performance. For more information, see: t-digest Redis t-digest",
+      "metadata": {
+        "source": "https://redis.io/topics/data-types",
+        "doc_id": "redis.io_topics_data_types",
+        "category": "databases",
+        "chunk_id": "redis.io_topics_data_types_chunk_5",
+        "chunk_index": 5
+      }
+    },
+    {
+      "content": "features and performance. For more information, see: t-digest Redis t-digest structures estimate percentiles from a stream of data values. For more information, see: Top-K Redis Top-K structures estimate the ranking of a data point within a stream of values. For more information, see: Count-min sketch Redis Count-min sketch estimate the frequency of a data point within a stream of values. For more information, see: Time series Redis time series structures let you store and query timestamped data points. For more information, see: Adding extensions To extend the features provided by the included data types, use one of these options: Write your own",
+      "metadata": {
+        "source": "https://redis.io/topics/data-types",
+        "doc_id": "redis.io_topics_data_types",
+        "category": "databases",
+        "chunk_id": "redis.io_topics_data_types_chunk_6",
+        "chunk_index": 6
+      }
+    },
+    {
+      "content": "data types, use one of these options: Write your own custom server-side functions in Lua. Write your own Redis module using the modules API or check out the community-supported modules.",
+      "metadata": {
+        "source": "https://redis.io/topics/data-types",
+        "doc_id": "redis.io_topics_data_types",
+        "category": "databases",
+        "chunk_id": "redis.io_topics_data_types_chunk_7",
+        "chunk_index": 7
+      }
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+"""Chat panel"""
+import logging
+from PyQt6.QtWidgets import QWidget, QVBoxLayout, QTextEdit, QLineEdit, QPushButton, QHBoxLayout, QLabel
+from PyQt6.QtCore import Qt, QThread, pyqtSignal
+from PyQt6.QtGui import QFont, QTextCursor
+
+logger = logging.getLogger(__name__)
+
+class InferenceThread(QThread):
+    response_ready = pyqtSignal(str)
+    error_occurred = pyqtSignal(str)
+    
+    def __init__(self, engine, prompt):
+        super().__init__()
+        self.engine = engine
+        self.prompt = prompt
+    
+    def run(self):
+        try:
+            response = self.engine.process_query(self.prompt)
+            self.response_ready.emit(response)
+        except Exception as e:
+            self.error_occurred.emit(str(e))
+
+class ChatPanel(QWidget):
+    def __init__(self, engine):
+        super().__init__()
+        self.engine = engine
+        self._init_ui()
+    
+    def _init_ui(self):
+        layout = QVBoxLayout(self)
+        title = QLabel("Chat")
+        title.setFont(QFont("", 12, QFont.Weight.Bold))
+        layout.addWidget(title)
+        
+        self.chat_display = QTextEdit()
+        self.chat_display.setReadOnly(True)
+        layout.addWidget(self.chat_display)
+        
+        input_layout = QHBoxLayout()
+        self.input_field = QLineEdit()
+        self.input_field.setPlaceholderText("Type message...")
+        self.input_field.returnPressed.connect(self._send_message)
+        self.input_field.setEnabled(False)
+        
+        self.send_btn = QPushButton("Send")
+        self.send_btn.clicked.connect(self._send_message)
+        self.send_btn.setEnabled(False)
+        
+        input_layout.addWidget(self.input_field)
+        input_layout.addWidget(self.send_btn)
+        layout.addLayout(input_layout)
+    
+    def enable_input(self):
+        self.input_field.setEnabled(True)
+        self.send_btn.setEnabled(True)
+    
+    def disable_input(self):
+        self.input_field.setEnabled(False)
+        self.send_btn.setEnabled(False)
+    
+    def _send_message(self):
+        prompt = self.input_field.text().strip()
+        if not prompt:
+            return
+        self._append_message("You", prompt, "#2196F3")
+        self.input_field.clear()
+        self.disable_input()
+        
+        self.inference_thread = InferenceThread(self.engine, prompt)
+        self.inference_thread.response_ready.connect(self._handle_response)
+        self.inference_thread.error_occurred.connect(self._handle_error)
+        self.inference_thread.start()
+    
+    def _handle_response(self, response: str):
+        self._append_message("Nova", response, "#4CAF50")
+        self.enable_input()
+        self.input_field.setFocus()
+    
+    def _handle_error(self, error: str):
+        self._append_message("Error", error, "#F44336")
+        self.enable_input()
+    
+    def _append_message(self, sender: str, message: str, color: str):
+        cursor = self.chat_display.textCursor()
+        cursor.movePosition(QTextCursor.MoveOperation.End)
+        cursor.insertHtml(f'<p style="color: {color}; font-weight: bold;">{sender}:</p>')
+        cursor.insertHtml(f'<p style="margin-left: 20px;">{message}</p><br>')
+        self.chat_display.setTextCursor(cursor)
+        self.chat_display.ensureCursorVisible()
+    
+    def clear_chat(self):
+        self.chat_display.clear()

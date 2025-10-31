@@ -1,0 +1,15 @@
+{
+  "doc_id": "docs.djangoproject.com_en_stable_intro_tutorial01",
+  "chunks": [
+    {
+      "content": "The web framework for perfectionists with deadlines. Toggle theme (current theme: auto) Toggle theme (current theme: light) Toggle theme (current theme: dark) Toggle Light / Dark / Auto color theme",
+      "metadata": {
+        "source": "https://docs.djangoproject.com/en/stable/intro/tutorial01/",
+        "doc_id": "docs.djangoproject.com_en_stable_intro_tutorial01",
+        "category": "web_development",
+        "chunk_id": "docs.djangoproject.com_en_stable_intro_tutorial01_chunk_0",
+        "chunk_index": 0
+      }
+    }
+  ]
+}

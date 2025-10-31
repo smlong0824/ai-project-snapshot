@@ -1,0 +1,55 @@
+{
+  "doc_id": "pytorch.org_docs_stable_nn_html",
+  "chunks": [
+    {
+      "content": "nn.L1Loss Creates a criterion that measures the mean absolute error (MAE) between each element in the input xxx and target yyy. nn.MSELoss Creates a criterion that measures the mean squared error (squared L2 norm) between each element in the input xxx and target yyy. nn.CrossEntropyLoss This criterion computes the cross entropy loss between input logits and target. nn.CTCLoss The Connectionist Temporal Classification loss. nn.NLLLoss The negative log likelihood loss. nn.PoissonNLLLoss Negative log likelihood loss with Poisson distribution of target. nn.GaussianNLLLoss Gaussian negative log likelihood loss. nn.KLDivLoss The Kullback-Leibler divergence loss. nn.BCELoss Creates a criterion that measures the Binary Cross Entropy between the",
+      "metadata": {
+        "source": "https://pytorch.org/docs/stable/nn.html#convolution-layers",
+        "doc_id": "pytorch.org_docs_stable_nn_html",
+        "category": "machine_learning",
+        "chunk_id": "pytorch.org_docs_stable_nn_html_chunk_0",
+        "chunk_index": 0
+      }
+    },
+    {
+      "content": "a criterion that measures the Binary Cross Entropy between the target and the input probabilities: nn.BCEWithLogitsLoss This loss combines a Sigmoid layer and the BCELoss in one single class. nn.MarginRankingLoss Creates a criterion that measures the loss given inputs x1x1x1, x2x2x2, two 1D mini-batch or 0D Tensors, and a label 1D mini-batch or 0D Tensor yyy (containing 1 or -1). nn.HingeEmbeddingLoss Measures the loss given an input tensor xxx and a labels tensor yyy (containing 1 or -1). nn.MultiLabelMarginLoss Creates a criterion that optimizes a multi-class multi-classification hinge loss (margin-based loss) between input xxx (a 2D mini-batch Tensor) and output yyy (which",
+      "metadata": {
+        "source": "https://pytorch.org/docs/stable/nn.html#convolution-layers",
+        "doc_id": "pytorch.org_docs_stable_nn_html",
+        "category": "machine_learning",
+        "chunk_id": "pytorch.org_docs_stable_nn_html_chunk_1",
+        "chunk_index": 1
+      }
+    },
+    {
+      "content": "input xxx (a 2D mini-batch Tensor) and output yyy (which is a 2D Tensor of target class indices). nn.HuberLoss Creates a criterion that uses a squared term if the absolute element-wise error falls below delta and a delta-scaled L1 term otherwise. nn.SmoothL1Loss Creates a criterion that uses a squared term if the absolute element-wise error falls below beta and an L1 term otherwise. nn.SoftMarginLoss Creates a criterion that optimizes a two-class classification logistic loss between input tensor xxx and target tensor yyy (containing 1 or -1). nn.MultiLabelSoftMarginLoss Creates a criterion that optimizes a multi-label one-versus-all loss based on max-entropy, between input xxx",
+      "metadata": {
+        "source": "https://pytorch.org/docs/stable/nn.html#convolution-layers",
+        "doc_id": "pytorch.org_docs_stable_nn_html",
+        "category": "machine_learning",
+        "chunk_id": "pytorch.org_docs_stable_nn_html_chunk_2",
+        "chunk_index": 2
+      }
+    },
+    {
+      "content": "a multi-label one-versus-all loss based on max-entropy, between input xxx and target yyy of size (N,C)(N, C)(N,C). nn.CosineEmbeddingLoss Creates a criterion that measures the loss given input tensors x1x_1x1\u200b, x2x_2x2\u200b and a Tensor label yyy with values 1 or -1. nn.MultiMarginLoss Creates a criterion that optimizes a multi-class classification hinge loss (margin-based loss) between input xxx (a 2D mini-batch Tensor) and output yyy (which is a 1D tensor of target class indices, 0\u2264y\u2264x.size(1)\u221210 \\leq y \\leq \\text{x.size}(1)-10\u2264y\u2264x.size(1)\u22121): nn.TripletMarginLoss Creates a criterion that measures the triplet loss given an input tensors x1x1x1, x2x2x2, x3x3x3 and a margin with a value greater than 000.",
+      "metadata": {
+        "source": "https://pytorch.org/docs/stable/nn.html#convolution-layers",
+        "doc_id": "pytorch.org_docs_stable_nn_html",
+        "category": "machine_learning",
+        "chunk_id": "pytorch.org_docs_stable_nn_html_chunk_3",
+        "chunk_index": 3
+      }
+    },
+    {
+      "content": "x3x3x3 and a margin with a value greater than 000. nn.TripletMarginWithDistanceLoss Creates a criterion that measures the triplet loss given input tensors aaa, ppp, and nnn (representing anchor, positive, and negative examples, respectively), and a nonnegative, real-valued function (\"distance function\") used to compute the relationship between the anchor and positive example (\"positive distance\") and the anchor and negative example (\"negative distance\").",
+      "metadata": {
+        "source": "https://pytorch.org/docs/stable/nn.html#convolution-layers",
+        "doc_id": "pytorch.org_docs_stable_nn_html",
+        "category": "machine_learning",
+        "chunk_id": "pytorch.org_docs_stable_nn_html_chunk_4",
+        "chunk_index": 4
+      }
+    }
+  ]
+}

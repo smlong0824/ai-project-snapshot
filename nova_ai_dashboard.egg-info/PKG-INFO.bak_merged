@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: nova-ai-dashboard
+Version: 1.0.0
+Summary: Multi-model AI desktop dashboard
+Author: Nova Development Team
+Requires-Python: >=3.9
+Requires-Dist: torch>=2.1.0
+Requires-Dist: transformers>=4.35.0
+Requires-Dist: PyQt6>=6.6.0
+Requires-Dist: chromadb>=0.4.18
+Dynamic: author
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary

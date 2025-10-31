@@ -1,0 +1,15 @@
+{
+  "doc_id": "www.nltk.org_api_nltk_tokenize_html",
+  "chunks": [
+    {
+      "content": ">>> from nltk.tokenize import WhitespaceTokenizer >>> list(WhitespaceTokenizer().span_tokenize(s)) [(0, 4), (5, 12), (13, 17), (18, 23), (24, 26), (27, 30), (31, 36), (38, 44), (45, 48), (49, 51), (52, 55), (56, 58), (59, 64), (66, 73)]",
+      "metadata": {
+        "source": "https://www.nltk.org/api/nltk.tokenize.html",
+        "doc_id": "www.nltk.org_api_nltk_tokenize_html",
+        "category": "nlp",
+        "chunk_id": "www.nltk.org_api_nltk_tokenize_html_chunk_0",
+        "chunk_index": 0
+      }
+    }
+  ]
+}

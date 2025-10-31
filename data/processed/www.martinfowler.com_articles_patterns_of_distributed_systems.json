@@ -1,0 +1,75 @@
+{
+  "doc_id": "www.martinfowler.com_articles_patterns_of_distributed_systems",
+  "chunks": [
+    {
+      "content": "Distributed systems provide a particular challenge to program. They often require us to have multiple copies of data, which need to keep synchronized. Yet we cannot rely on processing nodes working reliably, and network delays can easily lead to inconsistencies. Despite this, many organizations rely on a range of core distributed software handling data storage, messaging, system management, and compute capability. These systems face common problems which they solve with similar solutions. In 2020 I began collecting these solutions as patterns, publishing them on this site as I developed them. In 2023 these were published in the book Patterns of Distributed Systems.",
+      "metadata": {
+        "source": "https://www.martinfowler.com/articles/patterns-of-distributed-systems/",
+        "doc_id": "www.martinfowler.com_articles_patterns_of_distributed_systems",
+        "category": "architecture",
+        "chunk_id": "www.martinfowler.com_articles_patterns_of_distributed_systems_chunk_0",
+        "chunk_index": 0
+      }
+    },
+    {
+      "content": "these were published in the book Patterns of Distributed Systems. On this site I now have short summaries of each pattern, with deep links to the relevant chapters for the online eBook publication on oreilly.com (marked on this page with ). Wait to cover the uncertainty in time across cluster nodes before reading and writing values so that values can be correctly ordered across cluster nodes. Maintain a smaller cluster providing stronger consistency to allow the large data cluster to coordinate server activities without implementing quorum-based algorithms. Order cluster nodes based on their age within the cluster to allow nodes to select",
+      "metadata": {
+        "source": "https://www.martinfowler.com/articles/patterns-of-distributed-systems/",
+        "doc_id": "www.martinfowler.com_articles_patterns_of_distributed_systems",
+        "category": "architecture",
+        "chunk_id": "www.martinfowler.com_articles_patterns_of_distributed_systems_chunk_1",
+        "chunk_index": 1
+      }
+    },
+    {
+      "content": "their age within the cluster to allow nodes to select a leader without running an explicit election. Keep the number of partitions fixed to keep the mapping of data to partition unchanged when the size of a cluster changes. Serve read requests from followers to achieve better throughput and lower latency A monotonically increasing number indicating the generation of the server. Use a random selection of nodes to pass on information to ensure it reaches all the nodes in the cluster without flooding the network Show a server is available by periodically sending a message to all the other servers. An index",
+      "metadata": {
+        "source": "https://www.martinfowler.com/articles/patterns-of-distributed-systems/",
+        "doc_id": "www.martinfowler.com_articles_patterns_of_distributed_systems",
+        "category": "architecture",
+        "chunk_id": "www.martinfowler.com_articles_patterns_of_distributed_systems_chunk_2",
+        "chunk_index": 2
+      }
+    },
+    {
+      "content": "sending a message to all the other servers. An index in the write-ahead log showing the last successful replication. Use a combination of system timestamp and logical timestamp to have versions as date and time, which can be ordered Identify requests from clients uniquely so you can ignore duplicate requests when client retries Partition data in sorted key ranges to efficiently handle range queries. Use logical timestamps as a version for a value to allow ordering of values across servers Have a single server to coordinate replication across a set of servers. Use time-bound leases for cluster nodes to coordinate their activities.",
+      "metadata": {
+        "source": "https://www.martinfowler.com/articles/patterns-of-distributed-systems/",
+        "doc_id": "www.martinfowler.com_articles_patterns_of_distributed_systems",
+        "category": "architecture",
+        "chunk_id": "www.martinfowler.com_articles_patterns_of_distributed_systems_chunk_3",
+        "chunk_index": 3
+      }
+    },
+    {
+      "content": "Use time-bound leases for cluster nodes to coordinate their activities. An index in the write-ahead log showing which portion of the log can be discarded. Avoid two groups of servers making independent decisions by requiring majority for taking every decision. Use two consensus building phases to reach safe consensus even when nodes disconnect Keep the state of multiple nodes synchronized by using a write-ahead log that is replicated to all the cluster nodes. Combine multiple requests to optimally utilise the network Improve latency by sending multiple requests on the connection without waiting for the response of the previous requests. Track client requests",
+      "metadata": {
+        "source": "https://www.martinfowler.com/articles/patterns-of-distributed-systems/",
+        "doc_id": "www.martinfowler.com_articles_patterns_of_distributed_systems",
+        "category": "architecture",
+        "chunk_id": "www.martinfowler.com_articles_patterns_of_distributed_systems_chunk_4",
+        "chunk_index": 4
+      }
+    },
+    {
+      "content": "for the response of the previous requests. Track client requests which require responses after the criteria to respond is met based on responses from other cluster nodes. Split log into multiple smaller files instead of a single large file for easier operations. Maintain the order of the requests sent to a server by using a single TCP connection Use a single thread to process requests asynchronously to maintain order without blocking the caller. Notify clients when specific values change on the server Update resources on multiple nodes in one atomic operation Maintain a list of counters, one per cluster node, to detect",
+      "metadata": {
+        "source": "https://www.martinfowler.com/articles/patterns-of-distributed-systems/",
+        "doc_id": "www.martinfowler.com_articles_patterns_of_distributed_systems",
+        "category": "architecture",
+        "chunk_id": "www.martinfowler.com_articles_patterns_of_distributed_systems_chunk_5",
+        "chunk_index": 5
+      }
+    },
+    {
+      "content": "a list of counters, one per cluster node, to detect concurrent updates Store every update to a value with a new version, to allow reading historical values. Provide durability guarantee without the storage data structures to be flushed to disk, by persisting every state change as a command to the append only log.",
+      "metadata": {
+        "source": "https://www.martinfowler.com/articles/patterns-of-distributed-systems/",
+        "doc_id": "www.martinfowler.com_articles_patterns_of_distributed_systems",
+        "category": "architecture",
+        "chunk_id": "www.martinfowler.com_articles_patterns_of_distributed_systems_chunk_6",
+        "chunk_index": 6
+      }
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "doc_id": "docs.python.org_3_library_concurrent_futures_html",
+  "chunks": [
+    {
+      "content": "InterpreterPoolExecutor The InterpreterPoolExecutor class uses a pool of interpreters to execute calls asynchronously. It is a ThreadPoolExecutor subclass, which means each worker is running in its own thread. The difference here is that each worker has its own interpreter, and runs each task using that interpreter. The biggest benefit to using interpreters instead of only threads is true multi-core parallelism. Each interpreter has its own Global Interpreter Lock, so code running in one interpreter can run on one CPU core, while code in another interpreter runs unblocked on a different core. The tradeoff is that writing concurrent code for use with multiple",
+      "metadata": {
+        "source": "https://docs.python.org/3/library/concurrent.futures.html",
+        "doc_id": "docs.python.org_3_library_concurrent_futures_html",
+        "category": "programming",
+        "chunk_id": "docs.python.org_3_library_concurrent_futures_html_chunk_0",
+        "chunk_index": 0
+      }
+    },
+    {
+      "content": "tradeoff is that writing concurrent code for use with multiple interpreters can take extra effort. However, this is because it forces you to be deliberate about how and when interpreters interact, and to be explicit about what data is shared between interpreters. This results in several benefits that help balance the extra effort, including true multi-core parallelism, For example, code written this way can make it easier to reason about concurrency. Another major benefit is that you don\u00e2\u0080\u0099t have to deal with several of the big pain points of using threads, like race conditions. Each worker\u00e2\u0080\u0099s interpreter is isolated from all the",
+      "metadata": {
+        "source": "https://docs.python.org/3/library/concurrent.futures.html",
+        "doc_id": "docs.python.org_3_library_concurrent_futures_html",
+        "category": "programming",
+        "chunk_id": "docs.python.org_3_library_concurrent_futures_html_chunk_1",
+        "chunk_index": 1
+      }
+    },
+    {
+      "content": "race conditions. Each worker\u00e2\u0080\u0099s interpreter is isolated from all the other interpreters. \u00e2\u0080\u009cIsolated\u00e2\u0080\u009d means each interpreter has its own runtime state and operates completely independently. For example, if you redirect sys.stdout in one interpreter, it will not be automatically redirected to any other interpreter. If you import a module in one interpreter, it is not automatically imported in any other. You would need to import the module separately in interpreter where you need it. In fact, each module imported in an interpreter is a completely separate object from the same module in a different interpreter, including sys, builtins, and even __main__. Isolation",
+      "metadata": {
+        "source": "https://docs.python.org/3/library/concurrent.futures.html",
+        "doc_id": "docs.python.org_3_library_concurrent_futures_html",
+        "category": "programming",
+        "chunk_id": "docs.python.org_3_library_concurrent_futures_html_chunk_2",
+        "chunk_index": 2
+      }
+    },
+    {
+      "content": "a different interpreter, including sys, builtins, and even __main__. Isolation means a mutable object, or other data, cannot be used by more than one interpreter at the same time. That effectively means interpreters cannot actually share such objects or data. Instead, each interpreter must have its own copy, and you will have to synchronize any changes between the copies manually. Immutable objects and data, like the builtin singletons, strings, and tuples of immutable objects, don\u00e2\u0080\u0099t have these limitations. Communicating and synchronizing between interpreters is most effectively done using dedicated tools, like those proposed in PEP 734. One less efficient alternative is to",
+      "metadata": {
+        "source": "https://docs.python.org/3/library/concurrent.futures.html",
+        "doc_id": "docs.python.org_3_library_concurrent_futures_html",
+        "category": "programming",
+        "chunk_id": "docs.python.org_3_library_concurrent_futures_html_chunk_3",
+        "chunk_index": 3
+      }
+    },
+    {
+      "content": "proposed in PEP 734. One less efficient alternative is to serialize with pickle and then send the bytes over a shared socket or pipe. class concurrent.futures.InterpreterPoolExecutor(max_workers=None, thread_name_prefix='', initializer=None, initargs=()) A ThreadPoolExecutor subclass that executes calls asynchronously using a pool of at most max_workers threads. Each thread runs tasks in its own interpreter. The worker interpreters are isolated from each other, which means each has its own runtime state and that they can\u00e2\u0080\u0099t share any mutable objects or other data. Each interpreter has its own Global Interpreter Lock, which means code run with this executor has true multi-core parallelism. The optional initializer and",
+      "metadata": {
+        "source": "https://docs.python.org/3/library/concurrent.futures.html",
+        "doc_id": "docs.python.org_3_library_concurrent_futures_html",
+        "category": "programming",
+        "chunk_id": "docs.python.org_3_library_concurrent_futures_html_chunk_4",
+        "chunk_index": 4
+      }
+    },
+    {
+      "content": "this executor has true multi-core parallelism. The optional initializer and initargs arguments have the same meaning as for ThreadPoolExecutor: the initializer is run when each worker is created, though in this case it is run in the worker\u00e2\u0080\u0099s interpreter. The executor serializes the initializer and initargs using pickle when sending them to the worker\u00e2\u0080\u0099s interpreter. Note The executor may replace uncaught exceptions from initializer with ExecutionFailed. Other caveats from parent ThreadPoolExecutor apply here. submit() and map() work like normal, except the worker serializes the callable and arguments using pickle when sending them to its interpreter. The worker likewise serializes the return value",
+      "metadata": {
+        "source": "https://docs.python.org/3/library/concurrent.futures.html",
+        "doc_id": "docs.python.org_3_library_concurrent_futures_html",
+        "category": "programming",
+        "chunk_id": "docs.python.org_3_library_concurrent_futures_html_chunk_5",
+        "chunk_index": 5
+      }
+    },
+    {
+      "content": "to its interpreter. The worker likewise serializes the return value when sending it back. When a worker\u00e2\u0080\u0099s current task raises an uncaught exception, the worker always tries to preserve the exception as-is. If that is successful then it also sets the __cause__ to a corresponding ExecutionFailed instance, which contains a summary of the original exception. In the uncommon case that the worker is not able to preserve the original as-is then it directly preserves the corresponding ExecutionFailed instance instead. ProcessPoolExecutor The ProcessPoolExecutor class is an Executor subclass that uses a pool of processes to execute calls asynchronously. ProcessPoolExecutor uses the multiprocessing module,",
+      "metadata": {
+        "source": "https://docs.python.org/3/library/concurrent.futures.html",
+        "doc_id": "docs.python.org_3_library_concurrent_futures_html",
+        "category": "programming",
+        "chunk_id": "docs.python.org_3_library_concurrent_futures_html_chunk_6",
+        "chunk_index": 6
+      }
+    },
+    {
+      "content": "processes to execute calls asynchronously. ProcessPoolExecutor uses the multiprocessing module, which allows it to side-step the Global Interpreter Lock but also means that only picklable objects can be executed and returned. The __main__ module must be importable by worker subprocesses. This means that ProcessPoolExecutor will not work in the interactive interpreter. Calling Executor or Future methods from a callable submitted to a ProcessPoolExecutor will result in deadlock. Note that the restrictions on functions and arguments needing to picklable as per multiprocessing.Process apply when using submit() and map() on a ProcessPoolExecutor. A function defined in a REPL or a lambda should not be",
+      "metadata": {
+        "source": "https://docs.python.org/3/library/concurrent.futures.html",
+        "doc_id": "docs.python.org_3_library_concurrent_futures_html",
+        "category": "programming",
+        "chunk_id": "docs.python.org_3_library_concurrent_futures_html_chunk_7",
+        "chunk_index": 7
+      }
+    },
+    {
+      "content": "defined in a REPL or a lambda should not be expected to work. class concurrent.futures.ProcessPoolExecutor(max_workers=None, mp_context=None, initializer=None, initargs=(), max_tasks_per_child=None) An Executor subclass that executes calls asynchronously using a pool of at most max_workers processes. If max_workers is None or not given, it will default to os.process_cpu_count(). If max_workers is less than or equal to 0, then a ValueError will be raised. On Windows, max_workers must be less than or equal to 61. If it is not then ValueError will be raised. If max_workers is None, then the default chosen will be at most 61, even if more processors are available. mp_context can",
+      "metadata": {
+        "source": "https://docs.python.org/3/library/concurrent.futures.html",
+        "doc_id": "docs.python.org_3_library_concurrent_futures_html",
+        "category": "programming",
+        "chunk_id": "docs.python.org_3_library_concurrent_futures_html_chunk_8",
+        "chunk_index": 8
+      }
+    },
+    {
+      "content": "most 61, even if more processors are available. mp_context can be a multiprocessing context or None. It will be used to launch the workers. If mp_context is None or not given, the default multiprocessing context is used. See Contexts and start methods. initializer is an optional callable that is called at the start of each worker process; initargs is a tuple of arguments passed to the initializer. Should initializer raise an exception, all currently pending jobs will raise a BrokenProcessPool, as well as any attempt to submit more jobs to the pool. max_tasks_per_child is an optional argument that specifies the maximum number",
+      "metadata": {
+        "source": "https://docs.python.org/3/library/concurrent.futures.html",
+        "doc_id": "docs.python.org_3_library_concurrent_futures_html",
+        "category": "programming",
+        "chunk_id": "docs.python.org_3_library_concurrent_futures_html_chunk_9",
+        "chunk_index": 9
+      }
+    },
+    {
+      "content": "max_tasks_per_child is an optional argument that specifies the maximum number of tasks a single process can execute before it will exit and be replaced with a fresh worker process. By default max_tasks_per_child is None which means worker processes will live as long as the pool. When a max is specified, the \u00e2\u0080\u009cspawn\u00e2\u0080\u009d multiprocessing start method will be used by default in absence of a mp_context parameter. This feature is incompatible with the \u00e2\u0080\u009cfork\u00e2\u0080\u009d start method. Changed in version 3.3: When one of the worker processes terminates abruptly, a BrokenProcessPool error is now raised. Previously, behaviour was undefined but operations on the executor",
+      "metadata": {
+        "source": "https://docs.python.org/3/library/concurrent.futures.html",
+        "doc_id": "docs.python.org_3_library_concurrent_futures_html",
+        "category": "programming",
+        "chunk_id": "docs.python.org_3_library_concurrent_futures_html_chunk_10",
+        "chunk_index": 10
+      }
+    },
+    {
+      "content": "raised. Previously, behaviour was undefined but operations on the executor or its futures would often freeze or deadlock. Changed in version 3.7: The mp_context argument was added to allow users to control the start_method for worker processes created by the pool. Added the initializer and initargs arguments. Changed in version 3.11: The max_tasks_per_child argument was added to allow users to control the lifetime of workers in the pool. Changed in version 3.12: On POSIX systems, if your application has multiple threads and the multiprocessing context uses the \"fork\" start method: The os.fork() function called internally to spawn workers may raise a DeprecationWarning.",
+      "metadata": {
+        "source": "https://docs.python.org/3/library/concurrent.futures.html",
+        "doc_id": "docs.python.org_3_library_concurrent_futures_html",
+        "category": "programming",
+        "chunk_id": "docs.python.org_3_library_concurrent_futures_html_chunk_11",
+        "chunk_index": 11
+      }
+    },
+    {
+      "content": "function called internally to spawn workers may raise a DeprecationWarning. Pass a mp_context configured to use a different start method. See the os.fork() documentation for further explanation. Changed in version 3.14: The default process start method (see Contexts and start methods) changed away from fork. If you require the fork start method for ProcessPoolExecutor you must explicitly pass mp_context=multiprocessing.get_context(\"fork\"). terminate_workers() Attempt to terminate all living worker processes immediately by calling Process.terminate on each of them. Internally, it will also call Executor.shutdown() to ensure that all other resources associated with the executor are freed. After calling this method the caller should no longer",
+      "metadata": {
+        "source": "https://docs.python.org/3/library/concurrent.futures.html",
+        "doc_id": "docs.python.org_3_library_concurrent_futures_html",
+        "category": "programming",
+        "chunk_id": "docs.python.org_3_library_concurrent_futures_html_chunk_12",
+        "chunk_index": 12
+      }
+    },
+    {
+      "content": "freed. After calling this method the caller should no longer submit tasks to the executor. kill_workers() Attempt to kill all living worker processes immediately by calling Process.kill on each of them. Internally, it will also call Executor.shutdown() to ensure that all other resources associated with the executor are freed. After calling this method the caller should no longer submit tasks to the executor. ProcessPoolExecutor Example import concurrent.futures import math PRIMES = [ 112272535095293, 112582705942171, 112272535095293, 115280095190773, 115797848077099, 1099726899285419] def is_prime(n): if n < 2: return False if n == 2: return True if n % 2 == 0: return False sqrt_n =",
+      "metadata": {
+        "source": "https://docs.python.org/3/library/concurrent.futures.html",
+        "doc_id": "docs.python.org_3_library_concurrent_futures_html",
+        "category": "programming",
+        "chunk_id": "docs.python.org_3_library_concurrent_futures_html_chunk_13",
+        "chunk_index": 13
+      }
+    },
+    {
+      "content": "if n % 2 == 0: return False sqrt_n = int(math.floor(math.sqrt(n))) for i in range(3, sqrt_n + 1, 2): if n % i == 0: return False return True def main(): with concurrent.futures.ProcessPoolExecutor() as executor: for number, prime in zip(PRIMES, executor.map(is_prime, PRIMES)): print('%d is prime: %s' % (number, prime)) if __name__ == '__main__': main()",
+      "metadata": {
+        "source": "https://docs.python.org/3/library/concurrent.futures.html",
+        "doc_id": "docs.python.org_3_library_concurrent_futures_html",
+        "category": "programming",
+        "chunk_id": "docs.python.org_3_library_concurrent_futures_html_chunk_14",
+        "chunk_index": 14
+      }
+    }
+  ]
+}

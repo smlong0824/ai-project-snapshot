@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Academic RAG Scraper
+Comment=Scrape and index academic and technical content
+Exec=/usr/bin/python3 -m src.gui.scraper_gui
+Path=/home/scott/Nova
+Icon=/home/scott/Nova/assets/nova_icon.png
+Terminal=false
+Categories=Education;Science;Development;

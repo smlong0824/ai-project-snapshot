@@ -1,0 +1,14 @@
+{
+  "doc_id": "python.langchain.com_docs_get_started_introduction",
+  "chunks": [
+    {
+      "content": "We've raised a $125M Series B to build the platform for agent engineering. Read more.",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "doc_id": "python.langchain.com_docs_get_started_introduction",
+        "chunk_id": "python.langchain.com_docs_get_started_introduction_chunk_0",
+        "chunk_index": 0
+      }
+    }
+  ]
+}

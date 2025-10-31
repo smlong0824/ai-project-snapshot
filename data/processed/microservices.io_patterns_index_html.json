@@ -1,0 +1,75 @@
+{
+  "doc_id": "microservices.io_patterns_index_html",
+  "chunks": [
+    {
+      "content": "A pattern language for microservices pattern The beginnings of a pattern language for microservice architectures. \u70b9\u51fb\u8fd9\u91cc\uff0c\u8bbf\u95ee\u672c\u7cfb\u5217\u6587\u7ae0\u7684\u4e2d\u6587\u7ffb\u8bd1 Click here for Chinese translation of the patterns Architectural style Which architectural style should you choose for an application? Service boundaries How to decompose an application into services? Refactoring to services Service collaboration How to implement operations that span multiple services? Database per Service - each service has its own private database Shared database - services share a database Saga - use sagas, which a sequences of local transactions, to maintain data consistency across services Command-side replica - maintain a queryable replica of data in a",
+      "metadata": {
+        "source": "https://microservices.io/patterns/index.html",
+        "doc_id": "microservices.io_patterns_index_html",
+        "category": "architecture",
+        "chunk_id": "microservices.io_patterns_index_html_chunk_0",
+        "chunk_index": 0
+      }
+    },
+    {
+      "content": "replica - maintain a queryable replica of data in a service that implements a command API Composition - implement queries by invoking the services that own the data and performing an in-memory join CQRS - implement queries by maintaining one or more materialized views that can be efficiently queried Domain event - publish an event whenever data changes Event sourcing - persist aggregates as a sequence of events Transactional messaging How to send messages as part of a database transaction? Testing How to test services? Consumer-driven contract test - a test suite for a service that is written by the developers of",
+      "metadata": {
+        "source": "https://microservices.io/patterns/index.html",
+        "doc_id": "microservices.io_patterns_index_html",
+        "category": "architecture",
+        "chunk_id": "microservices.io_patterns_index_html_chunk_1",
+        "chunk_index": 1
+      }
+    },
+    {
+      "content": "for a service that is written by the developers of another service that consumes it Consumer-side contract test - a test suite for a service client (e.g. another service) that verifies that it can communicate with the service Service component sest - a test suite that tests a service in isolation using test doubles for any services that it invokes Deployment How to deploy an application\u2019s services? Cross-cutting concerns How to handle cross cutting concerns? Microservice chassis - a framework that handles cross-cutting concerns and simplifies the development of services Externalized configuration - externalize all configuration such as database location and credentials",
+      "metadata": {
+        "source": "https://microservices.io/patterns/index.html",
+        "doc_id": "microservices.io_patterns_index_html",
+        "category": "architecture",
+        "chunk_id": "microservices.io_patterns_index_html_chunk_2",
+        "chunk_index": 2
+      }
+    },
+    {
+      "content": "- externalize all configuration such as database location and credentials Service Template - a template that implements standard cross cutting concerns and is intended to be copied by a developer in order to quickly start developing a new service Communication styles Which mechanisms do services use to communicate with each other and their external clients? External API How do external clients communicate with the services? Service discovery How does the client of an RPI-based service discover the network location of a service instance? Reliability How to prevent a network or service failure from cascading to other services? Circuit Breaker - invoke a",
+      "metadata": {
+        "source": "https://microservices.io/patterns/index.html",
+        "doc_id": "microservices.io_patterns_index_html",
+        "category": "architecture",
+        "chunk_id": "microservices.io_patterns_index_html_chunk_3",
+        "chunk_index": 3
+      }
+    },
+    {
+      "content": "from cascading to other services? Circuit Breaker - invoke a remote service via a proxy that fails immediately when the failure rate of the remote call exceeds a threshold Security How to communicate the identity of the requestor to the services that handle the request? Access Token - a token that securely stores information about user that is exchanged between services Observability How to understand the behavior of an application and troubleshoot problems? Log aggregation - aggregate application logs Application metrics - instrument a service\u2019s code to gather statistics about operations Audit logging - record user activity in a database Distributed tracing",
+      "metadata": {
+        "source": "https://microservices.io/patterns/index.html",
+        "doc_id": "microservices.io_patterns_index_html",
+        "category": "architecture",
+        "chunk_id": "microservices.io_patterns_index_html_chunk_4",
+        "chunk_index": 4
+      }
+    },
+    {
+      "content": "logging - record user activity in a database Distributed tracing - instrument services with code that assigns each external request an unique identifier that is passed between services. Record information (e.g. start time, end time) about the work (e.g. service requests) performed when handling the external request in a centralized service Exception tracking - report all exceptions to a centralized exception tracking service that aggregates and tracks exceptions and notifies developers. Health check API - service API (e.g. HTTP endpoint) that returns the health of the service and is intended to be pinged, for example, by a monitoring service Log deployments and",
+      "metadata": {
+        "source": "https://microservices.io/patterns/index.html",
+        "doc_id": "microservices.io_patterns_index_html",
+        "category": "architecture",
+        "chunk_id": "microservices.io_patterns_index_html_chunk_5",
+        "chunk_index": 5
+      }
+    },
+    {
+      "content": "pinged, for example, by a monitoring service Log deployments and changes UI design How to implement a UI screen or page that displays data from multiple services? Server-side page fragment composition - build a webpage on the server by composing HTML fragments generated by multiple, business capability/subdomain-specific web applications Client-side UI composition - Build a UI on the client by composing UI fragments rendered by multiple, business capability/subdomain-specific UI components",
+      "metadata": {
+        "source": "https://microservices.io/patterns/index.html",
+        "doc_id": "microservices.io_patterns_index_html",
+        "category": "architecture",
+        "chunk_id": "microservices.io_patterns_index_html_chunk_6",
+        "chunk_index": 6
+      }
+    }
+  ]
+}

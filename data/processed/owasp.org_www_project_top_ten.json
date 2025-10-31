@@ -1,0 +1,175 @@
+{
+  "doc_id": "owasp.org_www_project_top_ten",
+  "chunks": [
+    {
+      "content": "Important note: OWASP Top Ten 2025 Current project status as of Sept 2025: We are on track to announce the release of the OWASP Top 10:2025 at the OWASP Global AppSec Conf in DC the first week of Nov 2025. Stay Tuned! The OWASP Top Ten Community Survey is open, please contribute your insights! Community Survey The OWASP Top 10 is a standard awareness document for developers and web application security. It represents a broad consensus about the most critical security risks to web applications. Globally recognized by developers as the first step towards more secure coding. Companies should adopt this document",
+      "metadata": {
+        "source": "https://owasp.org/www-project-top-ten/",
+        "doc_id": "owasp.org_www_project_top_ten",
+        "category": "security",
+        "chunk_id": "owasp.org_www_project_top_ten_chunk_0",
+        "chunk_index": 0
+      }
+    },
+    {
+      "content": "step towards more secure coding. Companies should adopt this document and start the process of ensuring that their web applications minimize these risks. Using the OWASP Top 10 is perhaps the most effective first step towards changing the software development culture within your organization into one that produces more secure code. Top 10 Web Application Security Risks There are three new categories, four categories with naming and scoping changes, and some consolidation in the Top 10 for 2021. A01:2021-Broken Access Control moves up from the fifth position; 94% of applications were tested for some form of broken access control. The 34 Common",
+      "metadata": {
+        "source": "https://owasp.org/www-project-top-ten/",
+        "doc_id": "owasp.org_www_project_top_ten",
+        "category": "security",
+        "chunk_id": "owasp.org_www_project_top_ten_chunk_1",
+        "chunk_index": 1
+      }
+    },
+    {
+      "content": "for some form of broken access control. The 34 Common Weakness Enumerations (CWEs) mapped to Broken Access Control had more occurrences in applications than any other category. A02:2021-Cryptographic Failures shifts up one position to #2, previously known as Sensitive Data Exposure, which was broad symptom rather than a root cause. The renewed focus here is on failures related to cryptography which often leads to sensitive data exposure or system compromise. A03:2021-Injection slides down to the third position. 94% of the applications were tested for some form of injection, and the 33 CWEs mapped into this category have the second most occurrences in",
+      "metadata": {
+        "source": "https://owasp.org/www-project-top-ten/",
+        "doc_id": "owasp.org_www_project_top_ten",
+        "category": "security",
+        "chunk_id": "owasp.org_www_project_top_ten_chunk_2",
+        "chunk_index": 2
+      }
+    },
+    {
+      "content": "mapped into this category have the second most occurrences in applications. Cross-site Scripting is now part of this category in this edition. A04:2021-Insecure Design is a new category for 2021, with a focus on risks related to design flaws. If we genuinely want to \u201cmove left\u201d as an industry, it calls for more use of threat modeling, secure design patterns and principles, and reference architectures. A05:2021-Security Misconfiguration moves up from #6 in the previous edition; 90% of applications were tested for some form of misconfiguration. With more shifts into highly configurable software, it\u2019s not surprising to see this category move up. The",
+      "metadata": {
+        "source": "https://owasp.org/www-project-top-ten/",
+        "doc_id": "owasp.org_www_project_top_ten",
+        "category": "security",
+        "chunk_id": "owasp.org_www_project_top_ten_chunk_3",
+        "chunk_index": 3
+      }
+    },
+    {
+      "content": "it\u2019s not surprising to see this category move up. The former category for XML External Entities (XXE) is now part of this category. A06:2021-Vulnerable and Outdated Components was previously titled Using Components with Known Vulnerabilities and is #2 in the Top 10 community survey, but also had enough data to make the Top 10 via data analysis. This category moves up from #9 in 2017 and is a known issue that we struggle to test and assess risk. It is the only category not to have any Common Vulnerability and Exposures (CVEs) mapped to the included CWEs, so a default exploit and",
+      "metadata": {
+        "source": "https://owasp.org/www-project-top-ten/",
+        "doc_id": "owasp.org_www_project_top_ten",
+        "category": "security",
+        "chunk_id": "owasp.org_www_project_top_ten_chunk_4",
+        "chunk_index": 4
+      }
+    },
+    {
+      "content": "mapped to the included CWEs, so a default exploit and impact weights of 5.0 are factored into their scores. A07:2021-Identification and Authentication Failures was previously Broken Authentication and is sliding down from the second position, and now includes CWEs that are more related to identification failures. This category is still an integral part of the Top 10, but the increased availability of standardized frameworks seems to be helping. A08:2021-Software and Data Integrity Failures is a new category for 2021, focusing on making assumptions related to software updates, critical data, and CI/CD pipelines without verifying integrity. One of the highest weighted impacts from",
+      "metadata": {
+        "source": "https://owasp.org/www-project-top-ten/",
+        "doc_id": "owasp.org_www_project_top_ten",
+        "category": "security",
+        "chunk_id": "owasp.org_www_project_top_ten_chunk_5",
+        "chunk_index": 5
+      }
+    },
+    {
+      "content": "without verifying integrity. One of the highest weighted impacts from Common Vulnerability and Exposures/Common Vulnerability Scoring System (CVE/CVSS) data mapped to the 10 CWEs in this category. Insecure Deserialization from 2017 is now a part of this larger category. A09:2021-Security Logging and Monitoring Failures was previously Insufficient Logging & Monitoring and is added from the industry survey (#3), moving up from #10 previously. This category is expanded to include more types of failures, is challenging to test for, and isn\u2019t well represented in the CVE/CVSS data. However, failures in this category can directly impact visibility, incident alerting, and forensics. A10:2021-Server-Side Request Forgery",
+      "metadata": {
+        "source": "https://owasp.org/www-project-top-ten/",
+        "doc_id": "owasp.org_www_project_top_ten",
+        "category": "security",
+        "chunk_id": "owasp.org_www_project_top_ten_chunk_6",
+        "chunk_index": 6
+      }
+    },
+    {
+      "content": "directly impact visibility, incident alerting, and forensics. A10:2021-Server-Side Request Forgery is added from the Top 10 community survey (#1). The data shows a relatively low incidence rate with above average testing coverage, along with above-average ratings for Exploit and Impact potential. This category represents the scenario where the security community members are telling us this is important, even though it\u2019s not illustrated in the data at this time. OWASP Top 10 2025 Data Analysis Plan Goals To collect the most comprehensive dataset related to identified application vulnerabilities to-date to enable analysis for the Top 10 and other future research as well. This",
+      "metadata": {
+        "source": "https://owasp.org/www-project-top-ten/",
+        "doc_id": "owasp.org_www_project_top_ten",
+        "category": "security",
+        "chunk_id": "owasp.org_www_project_top_ten_chunk_7",
+        "chunk_index": 7
+      }
+    },
+    {
+      "content": "the Top 10 and other future research as well. This data should come from a variety of sources; security vendors and consultancies, bug bounties, along with company/organizational contributions. Data will be normalized to allow for level comparison between Human assisted Tooling and Tooling assisted Humans. Analysis Infrastructure Plan to leverage the OWASP Azure Cloud Infrastructure to collect, analyze, and store the data contributed. Contributions We plan to support both known and pseudo-anonymous contributions. The preference is for contributions to be known; this immensely helps with the validation/quality/confidence of the data submitted. If the submitter prefers to have their data stored anonymously and",
+      "metadata": {
+        "source": "https://owasp.org/www-project-top-ten/",
+        "doc_id": "owasp.org_www_project_top_ten",
+        "category": "security",
+        "chunk_id": "owasp.org_www_project_top_ten_chunk_8",
+        "chunk_index": 8
+      }
+    },
+    {
+      "content": "the submitter prefers to have their data stored anonymously and even go as far as submitting the data anonymously, then it will have to be classified as \u201cunverified\u201d vs. \u201cverified\u201d. Verified Data Contribution Scenario 1: The submitter is known and has agreed to be identified as a contributing party. Scenario 2: The submitter is known but would rather not be publicly identified. Scenario 3: The submitter is known but does not want it recorded in the dataset. Unverified Data Contribution Scenario 4: The submitter is anonymous. (Should we support?) The analysis of the data will be conducted with a careful distinction when",
+      "metadata": {
+        "source": "https://owasp.org/www-project-top-ten/",
+        "doc_id": "owasp.org_www_project_top_ten",
+        "category": "security",
+        "chunk_id": "owasp.org_www_project_top_ten_chunk_9",
+        "chunk_index": 9
+      }
+    },
+    {
+      "content": "the data will be conducted with a careful distinction when the unverified data is part of the dataset that was analyzed. Contribution Process There are a few ways that data can be contributed: Email a CSV/Excel file with the dataset(s) to [email protected] Upload a CSV/Excel file to https://bit.ly/OWASPTop10Data Template examples can be found in GitHub: https://github.com/OWASP/Top10/tree/master/2025/Data Contribution Period We plan to accept contributions to the new Top 10 until July 31, 2025, for data dating from 2021 to 2024. Data Structure The following data elements are required or optional. The more information provided the more accurate our analysis can be. At",
+      "metadata": {
+        "source": "https://owasp.org/www-project-top-ten/",
+        "doc_id": "owasp.org_www_project_top_ten",
+        "category": "security",
+        "chunk_id": "owasp.org_www_project_top_ten_chunk_10",
+        "chunk_index": 10
+      }
+    },
+    {
+      "content": "information provided the more accurate our analysis can be. At a bare minimum, we need the time period, total number of applications tested in the dataset, and the list of CWEs and counts of how many applications contained that CWE. If at all possible, please provide the additional metadata, because that will greatly help us gain more insights into the current state of testing and vulnerabilities. Contributor Name (org or anon) Contributor Contact Email Time period (2024, 2023, 2022, 2021) Number of applications tested Type of testing (TaH, HaT, Tools) Primary Language (code) Geographic Region (Global, North America, EU, Asia, other) Primary",
+      "metadata": {
+        "source": "https://owasp.org/www-project-top-ten/",
+        "doc_id": "owasp.org_www_project_top_ten",
+        "category": "security",
+        "chunk_id": "owasp.org_www_project_top_ten_chunk_11",
+        "chunk_index": 11
+      }
+    },
+    {
+      "content": "(code) Geographic Region (Global, North America, EU, Asia, other) Primary Industry (Multiple, Financial, Industrial, Software, ??) Whether or not data contains retests or the same applications multiple times (T/F) CWE Data A list of CWEs w/ count of applications found to contain that CWE If at all possible, please provide core CWEs in the data, not CWE categories. This will help with the analysis, any normalization/aggregation done as a part of this analysis will be well documented. Note: If a contributor has two types of datasets, one from HaT and one from TaH sources, then it is recommended to submit them as",
+      "metadata": {
+        "source": "https://owasp.org/www-project-top-ten/",
+        "doc_id": "owasp.org_www_project_top_ten",
+        "category": "security",
+        "chunk_id": "owasp.org_www_project_top_ten_chunk_12",
+        "chunk_index": 12
+      }
+    },
+    {
+      "content": "TaH sources, then it is recommended to submit them as two separate datasets. HaT = Human assisted Tools (higher volume/frequency, primarily from tooling) TaH = Tool assisted Human (lower volume/frequency, primarily from human testing) Survey Similarly to the Top Ten 2021, we plan to conduct a survey to identify up to two categories of the Top Ten that the community believes are important, but may not be reflected in the data yet. We plan to conduct the survey in early 2025, and will be utilizing Google forms in a similar manner as last time. The CWEs on the survey will come from",
+      "metadata": {
+        "source": "https://owasp.org/www-project-top-ten/",
+        "doc_id": "owasp.org_www_project_top_ten",
+        "category": "security",
+        "chunk_id": "owasp.org_www_project_top_ten_chunk_13",
+        "chunk_index": 13
+      }
+    },
+    {
+      "content": "last time. The CWEs on the survey will come from current trending findings, CWEs that are outside the Top Ten in data, and other potential sources. Process At a high level, we plan to perform a level of data normalization; however, we will keep a version of the raw data contributed for future analysis. We will analyze the CWE distribution of the datasets and potentially reclassify some CWEs to consolidate them into larger buckets. We will carefully document all normalization actions taken so it is clear what has been done. We plan to calculate likelihood following the model we continued in 2021",
+      "metadata": {
+        "source": "https://owasp.org/www-project-top-ten/",
+        "doc_id": "owasp.org_www_project_top_ten",
+        "category": "security",
+        "chunk_id": "owasp.org_www_project_top_ten_chunk_14",
+        "chunk_index": 14
+      }
+    },
+    {
+      "content": "to calculate likelihood following the model we continued in 2021 to determine incidence rate instead of frequency to rate how likely a given app may contain at least one instance of a CWE. This means we aren\u2019t looking for the frequency rate (number of findings) in an app, rather, we are looking for the number of applications that had one or more instances of a CWE. We can calculate the incidence rate based on the total number of applications tested in the dataset compared to how many applications each CWE was found in. In addition, we will be developing base CWSS scores",
+      "metadata": {
+        "source": "https://owasp.org/www-project-top-ten/",
+        "doc_id": "owasp.org_www_project_top_ten",
+        "category": "security",
+        "chunk_id": "owasp.org_www_project_top_ten_chunk_15",
+        "chunk_index": 15
+      }
+    },
+    {
+      "content": "in. In addition, we will be developing base CWSS scores for the top 20-30 CWEs and include potential impact into the Top 10 weighting. Also, would like to explore additional insights that could be gleaned from the contributed dataset to see what else can be learned that could be of use to the security and development communities.",
+      "metadata": {
+        "source": "https://owasp.org/www-project-top-ten/",
+        "doc_id": "owasp.org_www_project_top_ten",
+        "category": "security",
+        "chunk_id": "owasp.org_www_project_top_ten_chunk_16",
+        "chunk_index": 16
+      }
+    }
+  ]
+}

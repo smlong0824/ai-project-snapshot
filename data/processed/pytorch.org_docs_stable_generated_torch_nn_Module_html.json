@@ -1,0 +1,25 @@
+{
+  "doc_id": "pytorch.org_docs_stable_generated_torch_nn_Module_html",
+  "chunks": [
+    {
+      "content": ">>> linear = nn.Linear(2, 2) >>> linear.weight Parameter containing: tensor([[ 0.1913, -0.3420], [-0.5113, -0.2325]]) >>> linear.to(torch.double) Linear(in_features=2, out_features=2, bias=True) >>> linear.weight Parameter containing: tensor([[ 0.1913, -0.3420], [-0.5113, -0.2325]], dtype=torch.float64) >>> gpu1 = torch.device(\"cuda:1\") >>> linear.to(gpu1, dtype=torch.half, non_blocking=True) Linear(in_features=2, out_features=2, bias=True) >>> linear.weight Parameter containing: tensor([[ 0.1914, -0.3420], [-0.5112, -0.2324]], dtype=torch.float16, device='cuda:1') >>> cpu = torch.device(\"cpu\") >>> linear.to(cpu) Linear(in_features=2, out_features=2, bias=True) >>> linear.weight Parameter containing: tensor([[ 0.1914, -0.3420], [-0.5112, -0.2324]], dtype=torch.float16) >>> linear = nn.Linear(2, 2, bias=None).to(torch.cdouble) >>> linear.weight Parameter containing: tensor([[ 0.3741+0.j, 0.2382+0.j], [ 0.5593+0.j, -0.4443+0.j]], dtype=torch.complex128) >>> linear(torch.ones(3, 2, dtype=torch.cdouble)) tensor([[0.6122+0.j, 0.1150+0.j], [0.6122+0.j, 0.1150+0.j], [0.6122+0.j, 0.1150+0.j]], dtype=torch.complex128)",
+      "metadata": {
+        "source": "https://pytorch.org/docs/stable/generated/torch.nn.Module.html",
+        "doc_id": "pytorch.org_docs_stable_generated_torch_nn_Module_html",
+        "category": "machine_learning",
+        "chunk_id": "pytorch.org_docs_stable_generated_torch_nn_Module_html_chunk_0",
+        "chunk_index": 0
+      }
+    },
+    {
+      "content": "0.1150+0.j], [0.6122+0.j, 0.1150+0.j], [0.6122+0.j, 0.1150+0.j]], dtype=torch.complex128)",
+      "metadata": {
+        "source": "https://pytorch.org/docs/stable/generated/torch.nn.Module.html",
+        "doc_id": "pytorch.org_docs_stable_generated_torch_nn_Module_html",
+        "category": "machine_learning",
+        "chunk_id": "pytorch.org_docs_stable_generated_torch_nn_Module_html_chunk_1",
+        "chunk_index": 1
+      }
+    }
+  ]
+}
